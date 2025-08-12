@@ -1,363 +1,280 @@
-  * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-{
+ 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.album-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* centraliza os álbuns */
+  gap: 20px; /* espaço entre os álbuns */
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.album {
+  flex: 0 0 calc(33.33% - 20px); /* três álbuns por linha */
   box-sizing: border-box;
 }
 
-body {
+.album-link {
+  display: block;
+  border: 3px solid #ccc;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  transition: border-color 0.3s, background-color 0.3s;
+  background: #000;
+  height: 100%;
+}
+
+.album-link:hover {
+  border-color: #f1c40f;
+  background-color: #111;
+}
+
+.album-link img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.album-title {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+html, body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #111;
+  color: #eee;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Cabeçalho */
+header {
+  background-color: #b30000;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  margin: 40px 0; /* 40px em cima e 40px embaixo */
+  color: #f1c40f;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+/* Menu superior */
+.top-menu {
+  margin: 30px 0; /* aumenta o espaço acima e abaixo do menu */
+}
+
+.top-menu ul {
+  list-style: none;
+  padding: 0;
   margin: 0;
+  display: flex;
+  gap: 40px; /* distância maior entre os itens */
+  justify-content: center;
+}
+
+.top-menu ul li a {
+  font-size: 1.5rem;          /* texto maior */
+  font-weight: bold;
+  padding: 12px 20px;
+  color: #fff;
+  text-decoration: none;
+  border: 3px solid #ccc;     /* moldura igual antes */
+  border-radius: 12px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  display: inline-block;
+}
+
+.top-menu ul li a:hover {
+  background-color: #000;
+  color: #f1c40f;
+  border-color: #f1c40f;
+}
+
+
+.content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  color: #eee;
   font-family: Arial, sans-serif;
 }
 
-        html,
-        body {
-            height: 100%;
-            font-family: Arial, sans-serif;
-            background-color: #111;
-            color: #eee;
-            display: flex;
-            flex-direction: column;
-        }
+.album-cover img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255,255,255,0.2);
+  display: block;
+  margin: 0 auto 20px auto;
+}
 
-        header {
-            background-color: #b30000;
-            padding: 20px;
-            text-align: center;
-        }
+.tracklist h2 {
+  color: #ffcc00;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  text-align: center;
+}
 
-        header h1 {
-            font-size: 2.5em;
-            color: #fff;
-        }
+.music-links li {
+  border: 1.5px solid #f1c40f; /* cor da borda, pode ajustar */
+  margin: 8px 0;                /* espaço entre as músicas */
+  padding: 10px 15px;           /* espaço interno para a música */
+  border-radius: 8px;
+  list-style: none;             /* tira o marcador padrão */
+  transition: background-color 0.3s, color 0.3s;
+}
 
-        .content {
-            flex: 1;
-            padding: 30px;
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
+.music-links li a {
+  color: #f1c40f;
+  text-decoration: none;
+  font-weight: 600;
+  display: block; /* faz o link preencher o item todo */
+}
 
-        .album-cover {
-            margin-bottom: 30px;
-        }
+.music-links li:hover {
+  background-color: #f1c40f;
+}
 
-        .album-cover img {
-            width: 100%;
-            max-width: 400px;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-        }
+.music-links li:hover a {
+  color: #111; /* muda cor do texto no hover */
+}
 
-        .tracklist {
-            text-align: left;
-            margin-top: 20px;
-        }
+body {
+  background-color: #111;
+  color: #eee;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
 
-        .tracklist h2 {
-            font-size: 1.5em;
-            color: #ffcc00;
-            margin-bottom: 15px;
-        }
 
-        .tracklist ul {
-            list-style: none;
-            padding-left: 0;
-        }
 
-        .tracklist li {
-            padding: 10px;
-            border-bottom: 1px solid #333;
-            transition: background-color 0.3s;
-        }
 
-        .tracklist li:hover {
-            background-color: #222;
-        }
+footer {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 40px;
+}
 
-        footer {
-            background-color: #222;
-            color: #fff;
-            text-align: center;
-            padding: 15px 0;
-            margin-top: 40px;
-        }
+footer .music-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
 
-        .footer-links {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 10px;
-        }
+footer .music-links a:hover {
+  color: #ffcc00;
+}
 
-        .footer-links a {
-            color: #fff;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
+/* Conteúdo principal */
+.content {
+  flex: 1;
+  padding: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
 
-        .footer-links a:hover {
-            color: #ffcc00;
-        }
+/* Galeria de álbuns */
+.album-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
 
-        
+.album {
+  width: calc(33.333% - 20px);
+  text-align: center;
+}
 
-         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+.album-link {
+  display: block;
+  border: 3px solid #ccc;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+  background: #000;
+  min-height: 350px; /* ajusta altura pra padronizar */
+  box-sizing: border-box;
+}
 
-        html,
-        body {
-            height: 100%;
-            font-family: Arial, sans-serif;
-            background-color: #111;
-            color: #eee;
-            display: flex;
-            flex-direction: column;
-        }
+.album-link:hover {
+  border-color: #f1c40f;
+  background-color: #222;
+  color: #ffcc00;
+}
 
-        header {
-            background-color: #b30000;
-            padding: 20px;
-            text-align: center;
-        }
+.album-link img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
 
-        header h1 {
-            font-size: 2.5em;
-            color: #fff;
-        }
+.album-title {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
 
-        .content {
-            flex: 1;
-            padding: 30px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
+/* Rodapé */
+footer {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 40px;
+}
 
-        .member {
-            display: flex;
-            align-items: center;
-            margin-bottom: 40px;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
+.footer-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
 
-        .member img {
-            width: 200px;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-        }
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
 
-        .member-description {
-            flex: 1;
-        }
+.footer-links a:hover {
+  color: #ffcc00;
+}
 
-        .member-description h2 {
-            font-size: 1.5em;
-            color: #ffcc00;
-            margin-bottom: 10px;
-        }
-
-        .member-description p {
-            font-size: 1em;
-            line-height: 1.6;
-        }
-
-        footer {
-            background-color: #222;
-            color: #fff;
-            text-align: center;
-            padding: 15px 0;
-            margin-top: 40px;
-        }
-
-        .footer-links {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 10px;
-        }
-
-        .footer-links a {
-            color: #fff;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: #ffcc00;
-        }
-
-        @media (max-width: 600px) {
-            .member {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .member img {
-                width: 100%;
-                max-width: 300px;
-            }
-        }
-
-         * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html,
-    body {
-      height: 100%;
-      font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      background-color: #111;
-      color: #eee;
-    }
-
-    header {
-      background-color: #b30000;
-      padding: 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 2.5em;
-      color: #fff;
-    }
-
-    .content {
-      flex: 1;
-      padding: 30px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .album-gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 30px;
-    }
-
-    .album {
-      width: calc(33.333% - 20px);
-      text-align: center;
-    }
-
-    .album img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-    }
-
-    .album-title a {
-      display: inline-block;
-      margin-top: 10px;
-      font-size: 1em;
-      color: #ffcc00;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    .album-title a:hover {
-      color: #ffffff;
-    }
-
-    footer {
-      background-color: #222;
-      color: #fff;
-      text-align: center;
-      padding: 15px 0;
-    }
-
-    .footer-links {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 10px;
-    }
-
-    .footer-links a {
-      color: #fff;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    .footer-links a:hover {
-      color: #ffcc00;
-    }
-
-    @media (max-width: 768px) {
-      .album {
-        width: calc(50% - 15px);
-      }
-    }
-
-    @media (max-width: 480px) {
-      .album {
-        width: 100%;
-      }
-    }
-
-    .alo a {
-      color: #ffcc00;
-      text-decoration: none;
-    }
-
-    .alo {
-      text-align: center;
-    }
-
-    .alo:hover {
-      color: yellow;
-    }
-
-   /* --- Ajustes simples de responsividade --- */
+/* Responsividade */
 @media (max-width: 768px) {
-  /* Galeria: 2 capas por linha */
   .album {
     width: calc(50% - 15px);
   }
 }
 
 @media (max-width: 480px) {
-  /* Galeria: 1 capa por linha */
   .album {
     width: 100%;
   }
-
-  /* Reduzir tamanho do título */
-  header h1 {
-    font-size: 1.6em;
-  }
-
-  /* Ajustar espaçamento */
-  .content {
-    padding: 15px;
-  }
-
-  /* Página de membros empilhada */
-  .member {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .member img {
-    width: 100%;
-    max-width: 300px;
-  }
 }
-
