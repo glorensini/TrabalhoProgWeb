@@ -12,50 +12,6 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* Galeria de álbuns responsiva */
-.album-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  padding: 20px;
-}
-
-.album {
-  text-align: center;
-}
-
-.album img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  transition: transform 0.3s;
-}
-
-.album img:hover {
-  transform: scale(1.05);
-}
-
-.album-title {
-  margin-top: 8px;
-}
-
-.album-title a {
-  text-decoration: none;
-  color: #000;
-  font-weight: bold;
-}
-
-/* Media query para telas menores */
-@media (max-width: 600px) {
-  h1 {
-    font-size: 1.5rem;
-    text-align: center;
-    padding: 0 10px;
-  }
-  .album-title a {
-    font-size: 0.9rem;
-  }
-}
         html,
         body {
             height: 100%;
