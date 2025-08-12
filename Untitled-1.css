@@ -1,81 +1,41 @@
- 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-.album-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* centraliza os álbuns */
-  gap: 20px; /* espaço entre os álbuns */
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.album {
-  flex: 0 0 calc(33.33% - 20px); /* três álbuns por linha */
-  box-sizing: border-box;
-}
-
-.album-link {
-  display: block;
-  border: 3px solid #ccc;
-  border-radius: 12px;
-  padding: 10px;
-  text-align: center;
-  color: #fff;
-  text-decoration: none;
-  transition: border-color 0.3s, background-color 0.3s;
-  background: #000;
-  height: 100%;
-}
-
-.album-link:hover {
-  border-color: #f1c40f;
-  background-color: #111;
-}
-
-.album-link img {
-  width: 100%;
-  height: 320px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 12px;
-}
-
-.album-title {
-  font-weight: bold;
-  font-size: 1.25rem;
-}
-
+/* -------------------------- Reset e estilos base -------------------------- */
 html, body {
   height: 100%;
-  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0; /* <--- tira esse padding */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #111;
   color: #eee;
   display: flex;
   flex-direction: column;
 }
 
-/* Cabeçalho */
+body {
+  background-color: #111;
+  color: #eee;
+  margin: 0;
+  padding: 0; /* <--- tira esse padding */
+}
+
+
+/* -------------------------- Cabeçalho -------------------------- */
 header {
   background-color: #b30000;
-  padding: 20px;
+  padding: 10px;
   text-align: center;
 }
 
 h1 {
   text-align: center;
-  margin: 40px 0; /* 40px em cima e 40px embaixo */
-  color: #f1c40f;
+  margin: 40px 0;
+  color: #ffffff;
   font-size: 2.5rem;
   font-weight: bold;
 }
 
-/* Menu superior */
+/* -------------------------- Menu Superior -------------------------- */
 .top-menu {
-  margin: 30px 0; /* aumenta o espaço acima e abaixo do menu */
+  margin: 50px 0;
 }
 
 .top-menu ul {
@@ -83,17 +43,17 @@ h1 {
   padding: 0;
   margin: 0;
   display: flex;
-  gap: 40px; /* distância maior entre os itens */
+  gap: 40px;
   justify-content: center;
 }
 
 .top-menu ul li a {
-  font-size: 1.5rem;          /* texto maior */
+  font-size: 1.5rem;
   font-weight: bold;
   padding: 12px 20px;
   color: #fff;
   text-decoration: none;
-  border: 3px solid #ccc;     /* moldura igual antes */
+  border: 3px solid #ccc;
   border-radius: 12px;
   transition: background-color 0.3s, color 0.3s, border-color 0.3s;
   display: inline-block;
@@ -105,38 +65,99 @@ h1 {
   border-color: #f1c40f;
 }
 
-
+/* -------------------------- Conteúdo Principal -------------------------- */
+/* Content - utilizado para páginas individuais e outras seções */
 .content {
-  max-width: 900px;
+  flex: 1;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 30px;
+  text-align: center;
   color: #eee;
   font-family: Arial, sans-serif;
 }
 
-.album-cover img {
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(255,255,255,0.2);
-  display: block;
-  margin: 0 auto 20px auto;
+/* -------------------------- Galeria de Álbuns -------------------------- */
+.album-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-.tracklist h2 {
+.album {
+  width: calc(33.333% - 20px);
+  text-align: center;
+}
+
+/* Link clicável do álbum */
+.album-link {
+  display: block;
+  border: 3px solid #ccc;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  background: #000;
+  min-height: 350px; /* altura para uniformizar */
+  box-sizing: border-box;
+  transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+}
+
+.album-link:hover {
+  border-color: #f1c40f;
+  background-color: #222;
   color: #ffcc00;
-  margin-bottom: 15px;
-  font-size: 1.5rem;
+}
+
+.album-link img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+/* Título do álbum */
+.album-title {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+/* -------------------------- Página de Álbum Individual -------------------------- */
+.album-cover {
+  max-width: 320px;
+  margin: 0 auto 20px auto;
+  text-align: center;
+}
+
+.album-cover img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(255,255,255,0.2);
+  display: block;
+}
+
+/* -------------------------- Lista de Músicas -------------------------- */
+.music-links {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: inline-block;
   text-align: center;
 }
 
 .music-links li {
-  border: 1.5px solid #f1c40f; /* cor da borda, pode ajustar */
-  margin: 8px 0;                /* espaço entre as músicas */
-  padding: 10px 15px;           /* espaço interno para a música */
+  border: 1.5px solid #f1c40f;
+  margin: 8px 0;
+  padding: 10px 15px;
   border-radius: 8px;
-  list-style: none;             /* tira o marcador padrão */
+  list-style: none;
   transition: background-color 0.3s, color 0.3s;
 }
 
@@ -144,7 +165,7 @@ h1 {
   color: #f1c40f;
   text-decoration: none;
   font-weight: 600;
-  display: block; /* faz o link preencher o item todo */
+  display: block;
 }
 
 .music-links li:hover {
@@ -152,20 +173,10 @@ h1 {
 }
 
 .music-links li:hover a {
-  color: #111; /* muda cor do texto no hover */
+  color: #111;
 }
 
-body {
-  background-color: #111;
-  color: #eee;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  padding: 20px;
-}
-
-
-
-
+/* -------------------------- Rodapé -------------------------- */
 footer {
   background-color: #222;
   color: #fff;
@@ -184,70 +195,7 @@ footer .music-links a:hover {
   color: #ffcc00;
 }
 
-/* Conteúdo principal */
-.content {
-  flex: 1;
-  padding: 30px;
-  max-width: 1000px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-/* Galeria de álbuns */
-.album-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.album {
-  width: calc(33.333% - 20px);
-  text-align: center;
-}
-
-.album-link {
-  display: block;
-  border: 3px solid #ccc;
-  border-radius: 12px;
-  padding: 10px;
-  text-align: center;
-  color: #fff;
-  text-decoration: none;
-  transition: border-color 0.3s, background-color 0.3s, color 0.3s;
-  background: #000;
-  min-height: 350px; /* ajusta altura pra padronizar */
-  box-sizing: border-box;
-}
-
-.album-link:hover {
-  border-color: #f1c40f;
-  background-color: #222;
-  color: #ffcc00;
-}
-
-.album-link img {
-  width: 100%;
-  height: 320px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 12px;
-}
-
-.album-title {
-  font-weight: bold;
-  font-size: 1.25rem;
-}
-
-/* Rodapé */
-footer {
-  background-color: #222;
-  color: #fff;
-  text-align: center;
-  padding: 15px 0;
-  margin-top: 40px;
-}
-
+/* -------------------------- Links do Rodapé -------------------------- */
 .footer-links {
   list-style: none;
   display: flex;
@@ -266,7 +214,7 @@ footer {
   color: #ffcc00;
 }
 
-/* Responsividade */
+/* -------------------------- Responsividade -------------------------- */
 @media (max-width: 768px) {
   .album {
     width: calc(50% - 15px);
