@@ -191,10 +191,6 @@ footer .music-links {
   gap: 20px;
 }
 
-footer .music-links a:hover {
-  color: #ffcc00;
-}
-
 /* -------------------------- Links do Rodapé -------------------------- */
 .footer-links {
   list-style: none;
