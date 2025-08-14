@@ -177,23 +177,6 @@ h1 {
 }
 
 /* -------------------------- Rodapé -------------------------- */
-footer {
-  background-color: #222;
-  color: #fff;
-  text-align: center;
-  padding: 15px 0;
-  margin-top: 40px;
-}
-
-footer .music-links {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-footer .music-links a:hover {
-  color: #ffcc00;
-}
 
 /* -------------------------- Links do Rodapé -------------------------- */
 .footer-links {
