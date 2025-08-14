@@ -2,7 +2,7 @@
 html, body {
   height: 100%;
   margin: 0;
-  padding: 0; /* <--- tira esse padding */
+  padding: 0; 
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #111;
   color: #eee;
@@ -14,7 +14,7 @@ body {
   background-color: #111;
   color: #eee;
   margin: 0;
-  padding: 0; /* <--- tira esse padding */
+  padding: 0;
 }
 
 
@@ -66,7 +66,6 @@ h1 {
 }
 
 /* Conteúdo Principal */
-/* Content - utilizado para páginas individuais e outras seções */
 .content {
   flex: 1;
   max-width: 1000px;
@@ -102,7 +101,7 @@ h1 {
   color: #fff;
   text-decoration: none;
   background: #000;
-  min-height: 350px; /* altura para uniformizar */
+  min-height: 350px;
   box-sizing: border-box;
   transition: border-color 0.3s, background-color 0.3s, color 0.3s;
 }
