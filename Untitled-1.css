@@ -206,9 +206,7 @@ footer .music-links {
   transition: color 0.3s;
 }
 
-.footer-links a:hover {
-  color: #ffcc00;
-}
+
 
 /* -------------------------- Responsividade -------------------------- */
 @media (max-width: 768px) {
