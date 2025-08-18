@@ -301,3 +301,14 @@ body {
 .member-info p {
   line-height: 1.5;
 }
+
+/*-----------  Botão return  ------------ */
+
+.back-icon {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  color: #ffffff;
+  cursor: pointer;
+  z-index: 1000;
+}
